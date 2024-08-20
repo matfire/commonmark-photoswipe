@@ -1,1 +1,3 @@
-/vendor/league/commonmark/
+/vendor
+/.idea
+composer.lock

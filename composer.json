@@ -3,7 +3,7 @@
     "description": "Photoswipe integration for commonmark",
     "type": "library",
     "license": "MIT",
-    
+
     "autoload": {
         "psr-4": {
             "Matfire\\CommonmarkPhotoswipe\\": "src/"
