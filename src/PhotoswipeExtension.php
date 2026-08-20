@@ -26,7 +26,16 @@ class PhotoswipeExtension implements ExtensionInterface, NodeRendererInterface
     {
         /** @var Image $node */
         $image = new HtmlElement('img', ['src' => $node->getUrl(), 'alt' => $node->getTitle() ?? '']);
-        $size = getimagesize($node->getUrl());
+        try {
+            $size = @getimagesize($node->getUrl());
+        } catch (\Throwable $exception) {
+            return $image;
+        }
+
+        if ($size === false) {
+            return $image;
+        }
+
         return new HtmlElement('a', ['href' => $node->getUrl(), 'target' => '_blank', 'data-pswp-width' => strval($size[0]), 'data-pswp-height' => strval($size[1])], $image);
     }
 }
