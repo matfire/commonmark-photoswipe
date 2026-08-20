@@ -18,7 +18,15 @@
     "require": {
         "league/commonmark": "^2.5.0"
     },
+    "require-dev": {
+        "pestphp/pest": "^5.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
     "scripts": {
-        "test": "php tests/run.php"
+        "test": "pest"
     }
 }
